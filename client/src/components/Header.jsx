@@ -66,7 +66,7 @@ export default function Header({ site }) {
         </Link>
         <div className="head-right">
           <a className="head-phone" href={`tel:+91${site.phone[0]}`}>
-            +91 – {site.phone[0]} / {site.phone[1]}
+            <i className="fa-solid fa-phone" /> +91 – {site.phone[0]} / {site.phone[1]}
           </a>
           <button
             type="button"

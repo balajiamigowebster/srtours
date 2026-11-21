@@ -10,7 +10,8 @@ body { overflow-x: clip; }
 .srt-header ul { list-style: none; margin: 0; padding: 0; }
 .srt-header .brand img { height: 78px; width: auto; display: block; }
 .head-right { display: flex; flex-direction: column; align-items: flex-end; gap: .45rem; padding-right: 3%; }
-.head-phone { font-weight: 600; font-size: 1.3rem; color: #000; }
+.head-phone { font-weight: 600; font-size: 1.3rem; color: #000; display: inline-flex; align-items: center; gap: .45rem; }
+.head-phone i { color: #fd5056; font-size: 1.05rem; }
 .menu { display: flex; gap: 2.4rem; align-items: center; }
 .menu a { font-weight: 600; font-size: 1.05rem; color: #1a093f; padding: .3rem 0; display: block; }
 .menu a:hover, .menu a.active { color: #fd5056; }
