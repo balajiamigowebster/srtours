@@ -1,6 +1,6 @@
 {
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/$1" },
-    { "source": "/((?!assets/|images/|orig/|data/|api/|sitemap\\.xml|sitemapsr\\.xml|robots\\.txt).*)", "destination": "/index.html" }
+    { "source": "/((?!assets/|images/|orig/|data/|api/|sitemap\\.xml|sitemapsr\\.xml|robots\\.txt|favicon\\.png|apple-touch-icon\\.png).*)", "destination": "/index.html" }
   ]
 }
