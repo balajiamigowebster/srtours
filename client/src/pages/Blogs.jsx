@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { fetchJson } from '../api.js';
 
 export default function Blogs() {
   const [blogs, setBlogs] = useState([]);
@@ -16,8 +17,7 @@ export default function Blogs() {
         'Explore SR Tours and Travels area-wise cab, van, and tour rental guides across Chennai including Madipakkam, Tambaram, Chrompet, Pallavaram, Pallikaranai, Medavakkam, Nanganallur, Perungalathur, and Vandalur.'
       );
     }
-    fetch('/api/blogs')
-      .then((r) => r.json())
+    fetchJson('/api/blogs', '/data/blogs.json')
       .then((data) => {
         setBlogs(Array.isArray(data) ? data : []);
         setLoading(false);

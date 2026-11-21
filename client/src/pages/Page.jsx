@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
+import { fetchJson } from '../api.js';
 
 const loaded = new Map();
 
@@ -108,8 +109,7 @@ export default function Page({ slug: slugProp, extra }) {
   useEffect(() => {
     const t = ++token.current;
     setMissing(false);
-    fetch(`/api/pages/${slug}`)
-      .then((r) => (r.ok ? r.json() : Promise.reject()))
+    fetchJson(`/api/pages/${slug}`, `/data/pages/${slug}.json`)
       .then(async (p) => {
         if (p.css && p.css.length) await ensureCss(p.css);
         if (t === token.current) {

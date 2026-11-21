@@ -4,6 +4,7 @@ import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import Page from './pages/Page.jsx';
 import Blogs from './pages/Blogs.jsx';
+import { fetchJson } from './api.js';
 
 export default function App() {
   const [site, setSite] = useState(null);
@@ -11,8 +12,8 @@ export default function App() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    fetch('/api/site').then((r) => r.json()).then(setSite).catch(console.error);
-    fetch('/api/layout').then((r) => r.json()).then(setLayout).catch(console.error);
+    fetchJson('/api/site', '/data/site.json').then(setSite).catch(console.error);
+    fetchJson('/api/layout', '/data/layout.json').then(setLayout).catch(console.error);
   }, []);
   useEffect(() => {
     window.scrollTo(0, 0);
