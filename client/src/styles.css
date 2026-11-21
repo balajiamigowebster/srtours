@@ -31,6 +31,28 @@ body { overflow-x: clip; }
 .srt-form button { background: #fd5056; color: #fff; border: 0; border-radius: 30px; padding: .8rem 1.8rem; font: 500 .95rem 'Poppins', sans-serif; cursor: pointer; }
 .srt-status { color: #1a093f; font-weight: 500; }
 
+/* Make Key Features cards on Home equal width & height */
+.orig-page .elementor-element-18f959d > .e-con-inner {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 2rem !important;
+  align-items: stretch !important;
+}
+.orig-page .elementor-element-18f959d .e-con-child {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  margin: 0 !important;
+}
+.orig-page .elementor-element-18f959d .elementor-widget-icon-box,
+.orig-page .elementor-element-18f959d .elementor-icon-box-wrapper {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
 /* Full-width Google Maps embed on Contact page */
 .orig-page .elementor-widget-google_maps {
   width: 100vw !important;
@@ -185,6 +207,7 @@ body { overflow-x: clip; }
   .srt-blog-grid { grid-template-columns: 1fr; }
   .srt-related-grid { grid-template-columns: 1fr; }
   .srt-gallery-grid { grid-template-columns: 1fr; }
+  .orig-page .elementor-element-18f959d > .e-con-inner { grid-template-columns: 1fr !important; }
 }
 
 .whatsapp { position: fixed; right: 20px; bottom: 20px; width: 56px; height: 56px; border-radius: 50%; background: #25d366; color: #fff; font-size: 1.9rem; display: grid; place-items: center; box-shadow: 0 4px 14px rgba(0,0,0,.3); z-index: 99; text-decoration: none; }
@@ -307,4 +330,5 @@ body { overflow-x: clip; }
   .srt-blog-grid { grid-template-columns: 1fr; }
   .srt-related-grid { grid-template-columns: 1fr; }
   .srt-gallery-grid { grid-template-columns: 1fr; }
+  .orig-page .elementor-element-18f959d > .e-con-inner { grid-template-columns: 1fr !important; }
 }
