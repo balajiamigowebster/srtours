@@ -4,6 +4,7 @@ import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import Page from './pages/Page.jsx';
 import Blogs from './pages/Blogs.jsx';
+import Gallery from './pages/Gallery.jsx';
 import { fetchJson } from './api.js';
 
 export default function App() {
@@ -28,6 +29,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Page slug="home" />} />
           <Route path="/blogs" element={<Blogs />} />
+          <Route path="/tourdaily-destinations" element={<Gallery />} />
           <Route path="/:slug" element={<Page />} />
         </Routes>
       </main>
