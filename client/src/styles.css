@@ -32,25 +32,48 @@ body { overflow-x: clip; }
 .srt-status { color: #1a093f; font-weight: 500; }
 
 /* Make Key Features cards on Home equal width & height */
-.orig-page .elementor-element-18f959d > .e-con-inner {
+.orig-page .elementor-57 .elementor-element.elementor-element-18f959d > .e-con-inner {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
   gap: 2rem !important;
   align-items: stretch !important;
+  padding: 1rem 1.5rem 2.5rem !important;
 }
-.orig-page .elementor-element-18f959d .e-con-child {
+.orig-page .elementor-57 .elementor-element.elementor-element-18f959d .elementor-element.e-con-child,
+.orig-page .elementor-57 .elementor-element.elementor-element-7adb32a,
+.orig-page .elementor-57 .elementor-element.elementor-element-773f2c2,
+.orig-page .elementor-57 .elementor-element.elementor-element-c67cab9 {
+  --width: 100% !important;
+  --margin-left: 0px !important;
+  --margin-right: 0px !important;
+  --margin-top: 0px !important;
+  --margin-bottom: 0px !important;
+  --padding-left: 0px !important;
+  --padding-right: 0px !important;
   width: 100% !important;
   max-width: 100% !important;
   height: 100% !important;
   display: flex !important;
   flex-direction: column !important;
   margin: 0 !important;
+  padding: 0 !important;
 }
-.orig-page .elementor-element-18f959d .elementor-widget-icon-box,
-.orig-page .elementor-element-18f959d .elementor-icon-box-wrapper {
+.orig-page .elementor-57 .elementor-element.elementor-element-18f959d .elementor-widget-icon-box {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 28px 24px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+.orig-page .elementor-57 .elementor-element.elementor-element-18f959d .elementor-icon-box-wrapper {
+  width: 100% !important;
   height: 100% !important;
   display: flex !important;
   flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
 }
 
 /* Full-width Google Maps embed on Contact page */
@@ -207,7 +230,7 @@ body { overflow-x: clip; }
   .srt-blog-grid { grid-template-columns: 1fr; }
   .srt-related-grid { grid-template-columns: 1fr; }
   .srt-gallery-grid { grid-template-columns: 1fr; }
-  .orig-page .elementor-element-18f959d > .e-con-inner { grid-template-columns: 1fr !important; }
+  .orig-page .elementor-57 .elementor-element.elementor-element-18f959d > .e-con-inner { grid-template-columns: 1fr !important; }
 }
 
 .whatsapp { position: fixed; right: 20px; bottom: 20px; width: 56px; height: 56px; border-radius: 50%; background: #25d366; color: #fff; font-size: 1.9rem; display: grid; place-items: center; box-shadow: 0 4px 14px rgba(0,0,0,.3); z-index: 99; text-decoration: none; }
@@ -330,5 +353,5 @@ body { overflow-x: clip; }
   .srt-blog-grid { grid-template-columns: 1fr; }
   .srt-related-grid { grid-template-columns: 1fr; }
   .srt-gallery-grid { grid-template-columns: 1fr; }
-  .orig-page .elementor-element-18f959d > .e-con-inner { grid-template-columns: 1fr !important; }
+  .orig-page .elementor-57 .elementor-element.elementor-element-18f959d > .e-con-inner { grid-template-columns: 1fr !important; }
 }
