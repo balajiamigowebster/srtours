@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
+import Loader from './components/Loader.jsx';
 import Page from './pages/Page.jsx';
 import Blogs from './pages/Blogs.jsx';
 import Gallery from './pages/Gallery.jsx';
@@ -20,7 +21,7 @@ export default function App() {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  if (!site) return <div className="loading">Loading...</div>;
+  if (!site) return <Loader fullScreen />;
 
   return (
     <>

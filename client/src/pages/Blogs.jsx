@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchJson } from '../api.js';
+import Loader from '../components/Loader.jsx';
 
 export default function Blogs() {
   const [blogs, setBlogs] = useState([]);
@@ -81,7 +82,7 @@ export default function Blogs() {
 
       <div className="srt-wrap srt-blogs-body">
         {loading ? (
-          <div className="loading">Loading blogs...</div>
+          <Loader />
         ) : filtered.length === 0 ? (
           <div className="srt-empty">
             <p>No area guides matched &ldquo;{query}&rdquo;. Try another Chennai locality or call +91 9884300373.</p>

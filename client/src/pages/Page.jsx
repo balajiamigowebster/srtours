@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { fetchJson } from '../api.js';
+import Loader from '../components/Loader.jsx';
 
 const loaded = new Map();
 
@@ -128,7 +129,7 @@ export default function Page({ slug: slugProp, extra }) {
         <h2>Page not found</h2>
       </div>
     );
-  if (!page || page.slug !== slug) return <div className="loading">Loading...</div>;
+  if (!page || page.slug !== slug) return <Loader />;
 
   if (page.type === 'blog') {
     return (
