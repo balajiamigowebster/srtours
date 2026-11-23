@@ -39,15 +39,47 @@ const localBusinessLd = JSON.stringify({
   ],
 });
 
+const faqLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How do I book car rental in Chennai with SR Tours & Travels?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Call or WhatsApp +91 9884300373 / 9884050506 or book online at https://srtours.net/contact for 24/7 doorstep AC cab, Innova Crysta, and Tempo Traveller pickup across Chennai.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What Chennai tour packages and Rameswaram tour packages do you offer?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'SR Tours & Travels offers 1-day Chennai sightseeing, 2 & 3 day Rameswaram–Madurai–Thiruchendur temple tour packages, daily Tirupati darshan, Mahabalipuram, Pondicherry, Ooty, Kodaikanal, and Munnar packages.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Which Chennai areas do you serve for cab and van rentals?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'From our office in Mylai Balaji Nagar, Pallikaranai & Madipakkam, we provide 24/7 pickups in Madipakkam, Pallikaranai, Medavakkam, Chrompet, Tambaram, Pallavaram, Nanganallur, Perungalathur, Vandalur, Velachery, OMR, and Chennai Airport.',
+      },
+    },
+  ],
+});
+
 function renderHtml({ slug, title, description, ogImage, isBlog, jsonLd, bodyHtml }) {
   const canonical = slug === 'home' ? `${SITE_URL}/` : `${SITE_URL}/${slug}`;
-  const ldScripts =
-    jsonLd && jsonLd.length
-      ? [
-          `<script type="application/ld+json">${localBusinessLd}</script>`,
-          ...jsonLd.map((j) => `<script type="application/ld+json">${j}</script>`),
-        ].join('\n    ')
-      : `<script type="application/ld+json">${localBusinessLd}</script>`;
+  const extraLd = slug === 'home' || slug === 'car-rental-in-chennai' || slug === 'chennai-tour-packages' || slug === 'rameswaram-tour-packages'
+    ? [`<script type="application/ld+json">${faqLd}</script>`]
+    : [];
+  const ldScripts = [
+    `<script type="application/ld+json">${localBusinessLd}</script>`,
+    ...extraLd,
+    ...(jsonLd || []).map((j) => `<script type="application/ld+json">${j}</script>`),
+  ].join('\n    ');
 
   const seoHead = [
     `<meta name="keywords" content="car rental in chennai, chennai tour packages, Rameswaram tour packages, travels in chennai, travels in madipakkam, travels in pallikaranai, tempo traveller chennai, SR Tours and Travels" />`,
@@ -97,7 +129,8 @@ for (const file of files) {
     title = 'SR Tours and Travels - Car Rental in Chennai, Chennai Tour Packages & Rameswaram Tour Packages';
     description =
       'Book affordable car rental in Chennai, customized Chennai tour packages, and Rameswaram tour packages with SR Tours & Travels. 24/7 AC cabs, Innova Crysta, tempo travellers & airport transfers. Call +91 9884300373.';
-    bodyHtml = `<h1>SR Tours and Travels – Car Rental in Chennai &amp; Chennai Tour Packages</h1><p>${esc(description)}</p><p><a href="/car-rental-in-chennai">Car Rental in Chennai</a> | <a href="/chennai-tour-packages">Chennai Tour Packages</a> | <a href="/rameswaram-tour-packages">Rameswaram Tour Packages</a></p>`;
+    const blogLinks = blogs.map((b) => `<a href="/${esc(b.slug)}">${esc(b.title)}</a>`).join(' | ');
+    bodyHtml = `<main><h1>SR Tours and Travels – Car Rental in Chennai, Chennai Tour Packages &amp; Rameswaram Tour Packages</h1><p>${esc(description)}</p><nav>${blogLinks}</nav></main>`;
   } else if (slug === 'tariff') {
     title = 'Car Rental in Chennai Tariff – AC Cab, Innova & Tempo Traveller Rates | SR Tours';
     description =

@@ -226,6 +226,13 @@ body { overflow-x: clip; }
 .srt-lb-nav.next { right: 12px; }
 .srt-lb-close:hover, .srt-lb-nav:hover { background: #fd5056 !important; }
 
+/* Sitewide SEO Service Areas & Popular Keywords Internal-Link Strip */
+.srt-seo-strip { background: #f6f5fa; border-top: 1px solid #e7e4f2; border-bottom: 1px solid #e7e4f2; padding: 1.8rem 0; font-family: 'Poppins', sans-serif; }
+.srt-seo-strip h3 { font-family: 'Roboto Slab', serif !important; font-size: 1.05rem !important; color: #1a093f !important; margin: 0 0 .9rem !important; }
+.srt-seo-links { display: flex; flex-wrap: wrap; gap: .5rem .6rem; }
+.srt-seo-links a { font-size: .82rem; font-weight: 500; color: #1a093f; background: #fff; border: 1px solid #e0dce9; border-radius: 20px; padding: .35rem .85rem; text-decoration: none; transition: .2s; }
+.srt-seo-links a:hover { background: #fd5056; border-color: #fd5056; color: #fff; }
+
 @media (max-width: 960px) {
   .srt-blog-grid { grid-template-columns: 1fr; }
   .srt-related-grid { grid-template-columns: 1fr; }
