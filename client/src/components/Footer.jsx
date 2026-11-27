@@ -29,7 +29,7 @@ export default function Footer({ layout }) {
     <>
       <section className="srt-seo-strip" aria-label="Popular Chennai Travel Services and Areas">
         <div className="srt-wrap">
-          <h3>Popular Services &amp; Service Areas in Chennai</h3>
+          <h3>Popular Service &amp; Service Areas in Chennai</h3>
           <div className="srt-seo-links">
             {SEO_LINKS.map((l) => (
               <Link key={l.to} to={l.to}>{l.label}</Link>
